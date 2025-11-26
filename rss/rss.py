@@ -1748,7 +1748,7 @@ class RSS(commands.Cog):
                     if self._post_queue_size < 300:
                         wait = 1
                     else:
-                        wait = (300 - 10) / self._post_queue_size
+                        wait = (30 - 10) / self._post_queue_size
                     log.debug(f"sleeping for {wait}...")
                     await asyncio.sleep(wait)
 
