@@ -1720,7 +1720,7 @@ class RSS(commands.Cog):
                     if self._post_queue_size < 300:
                         # less than 300 entries to check means 1/sec check times
                         # the wait is (5 min - entry count) before posting again
-                        wait = 300 - self._post_queue_size
+                        wait = 30 - self._post_queue_size
                     else:
                         # more than 300 entries means we used the whole 5 min
                         # to check and post feeds so don't wait any longer to start again
