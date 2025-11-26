@@ -105,7 +105,9 @@ class RSS(commands.Cog):
             # sort everything by time if a time value is present
             if feedparser_obj.entries:
                 # this feed has posts
-                sorted_feed_by_post_time = await self._sort_by_post_time(feedparser_obj.entries)
+                # disabled sort by time
+                # sorted_feed_by_post_time = await self._sort_by_post_time(feedparser_obj.entries)
+                sorted_feed_by_post_time = feedparser_obj.entries
             else:
                 # this feed does not have posts, but it has a header with channel information
                 sorted_feed_by_post_time = [feedparser_obj.feed]
@@ -1430,7 +1432,9 @@ class RSS(commands.Cog):
         # or some feeds are out of time order by default
         if feedparser_obj.entries:
             # this feed has posts
-            sorted_feed_by_post_time = await self._sort_by_post_time(feedparser_obj.entries)
+            # disabled sort by time
+            # sorted_feed_by_post_time = await self._sort_by_post_time(feedparser_obj.entries)
+            sorted_feed_by_post_time = feedparser_obj.entries
         else:
             # this feed does not have posts, but it has a header with channel information
             sorted_feed_by_post_time = [feedparser_obj.feed]
